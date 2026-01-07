@@ -1,4 +1,4 @@
-_update() {
+update() {
     echo -n "Do you want to update the system? [Y/n] "
     read choice
     case "$choice" in
@@ -21,7 +21,7 @@ _update() {
 
             echo "🧹 Removing unused packages..."
             sudo apt autoremove -y
-            sudo apt autoclean -y
+            sudo apt clean
 
             echo "📦 Refreshing Snap packages..."
             sudo snap refresh

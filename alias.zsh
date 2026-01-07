@@ -1,2 +1,2 @@
 alias z="zed ."
-alias gte="gnome-text-editor"
+alias gedit="gnome-text-editor"
