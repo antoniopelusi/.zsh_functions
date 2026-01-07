@@ -4,7 +4,7 @@ Personal config for zsh
 
 1. Clone the repository in ~:
     ```zsh
-    git clone git@github.com:antoniopelusi/.zsh_functions.git
+    git clone git@github.com:antoniopelusi/.zsh_functions.git ~
     ```
 
 2. Add the following lines in .zshrc:
@@ -16,5 +16,5 @@ Personal config for zsh
 
 3. Apply to .zshrc
     ```zsh
-    source .zshrc
+    source ~/.zshrc
     ```
