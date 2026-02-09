@@ -9,8 +9,12 @@ Personal config for zsh
 
 2. Add the following lines in .zshrc:
     ```zsh
+    fpath=(~/.zsh_functions $fpath)
+    autoload -Uz compinit
+    compinit
+    
     for file in ~/.zsh_functions/*.zsh; do
-            source "$file"
+        source "$file"
     done
     ```
 

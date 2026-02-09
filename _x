@@ -1,0 +1,10 @@
+#compdef x
+
+_x() {
+  local -a commands
+  commands=(${(f)"$(ls ~/.zsh_functions/x | sed 's/\.zsh$//')"})
+
+  _describe 'x command' commands
+}
+
+_x
