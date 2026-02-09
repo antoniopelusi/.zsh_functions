@@ -7,18 +7,9 @@ Personal config for zsh
     git clone git@github.com:antoniopelusi/.zsh_functions.git ~
     ```
 
-2. Add the following lines in .zshrc:
+2. Install and apply:
     ```zsh
-    fpath=(~/.zsh_functions $fpath)
-    autoload -Uz compinit
-    compinit
-    
-    for file in ~/.zsh_functions/*.zsh; do
-        source "$file"
-    done
-    ```
-
-3. Apply to .zshrc
-    ```zsh
+    cd ~/.zsh_functions
+    make install
     source ~/.zshrc
     ```

@@ -1,10 +1,8 @@
 #compdef x
-
 _x() {
   local -a commands
-  commands=(${(f)"$(ls ~/.zsh_functions/x | sed 's/\.zsh$//')"})
-
-  _describe 'x command' commands
+  for f in ~/.zsh_functions/x.d/*.zsh(N); do
+    commands+=("${f:t:r}")
+  done
+  _describe 'command' commands
 }
-
-_x
