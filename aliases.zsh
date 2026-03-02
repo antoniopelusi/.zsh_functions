@@ -1,1 +1,1 @@
-alias z="zed ."
+alias z="flatpak run dev.zed.Zed ."
