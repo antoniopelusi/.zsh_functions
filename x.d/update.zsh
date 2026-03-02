@@ -12,6 +12,12 @@ case "$choice" in
     echo "Cleaning package cache..."
     sudo dnf clean all
     echo "System update complete."
+
+    echo "Updating Flatpak applications..."
+    flatpak -y update
+    echo "Removing unused Flatpak runtimes..."
+    flatpak -y uninstall --unused
+    echo "Flatpak update complete."
     ;;
   * )
     echo "Update canceled."
