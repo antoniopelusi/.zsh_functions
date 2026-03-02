@@ -2,21 +2,15 @@ echo -n "Do you want to update the system? [Y/n] "
 read choice
 case "$choice" in
   [Yy]* | "" )
-    echo "Updating package lists..."
-    if ! sudo apt update; then
-      echo "Failed to update package lists."
-      return 1
-    fi
-    echo "Upgrading installed packages..."
-    if ! sudo apt upgrade -y; then
+    echo "Updating and upgrading installed packages..."
+    if ! sudo dnf -y update --refresh; then
       echo "Failed to upgrade packages."
       return 1
     fi
     echo "Removing unused packages..."
-    sudo apt autoremove -y
-    sudo apt clean
-    echo "Refreshing Snap packages..."
-    sudo snap refresh
+    sudo dnf -y autoremove
+    echo "Cleaning package cache..."
+    sudo dnf clean all
     echo "System update complete."
     ;;
   * )
