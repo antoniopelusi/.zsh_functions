@@ -1,8 +1,6 @@
 .PHONY: install
 .SILENT: install
 
-SHELL := /bin/zsh
-
 install:
 	echo "|> Installing zsh_functions..."
 	echo 'export PATH=$$HOME/bin:$$HOME/.local/bin:/usr/local/bin:$$PATH' > ~/.zshrc
@@ -12,7 +10,11 @@ install:
 	echo '' >> ~/.zshrc
 	echo 'fpath=(~/.zsh_functions $$fpath)' >> ~/.zshrc
 	echo 'autoload -Uz x' >> ~/.zshrc
-	echo 'source ~/.zsh_functions/aliases.zsh' >> ~/.zshrc
 	echo 'autoload -Uz compinit' >> ~/.zshrc
 	echo 'compinit -C' >> ~/.zshrc
 	echo "|> zsh_functions installed"
+	echo "|> Installing bin wrappers..."
+	sudo cp bin/zed /usr/local/bin/zed
+	sudo cp bin/z /usr/local/bin/z
+	sudo chmod +x /usr/local/bin/zed /usr/local/bin/z
+	echo "|> bin wrappers installed"
