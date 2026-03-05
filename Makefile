@@ -1,5 +1,8 @@
-.PHONY: install
-.SILENT: install
+.PHONY: all install uninstall
+.SILENT: all install uninstall
+
+all:
+	echo "|> No target selected. Abort."
 
 install:
 	echo "|> Installing zsh_functions..."
@@ -18,3 +21,12 @@ install:
 	sudo cp bin/z /usr/local/bin/z
 	sudo chmod +x /usr/local/bin/zed /usr/local/bin/z
 	echo "|> bin wrappers installed"
+
+uninstall:
+	echo "|> Uninstalling zsh_functions..."
+	rm -f ~/.zshrc
+	echo "|> zsh_functions uninstalled"
+	echo "|> Uninstalling bin wrappers..."
+	sudo rm -f /usr/local/bin/zed /usr/local/bin/z
+	echo "|> bin wrappers uninstalled"
+	echo "|> Done"

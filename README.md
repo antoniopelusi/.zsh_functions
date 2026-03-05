@@ -8,19 +8,21 @@ Personal `zsh` configuration - optimized for **Fedora**.
 - `git` installed
 - [oh-my-zsh](https://ohmyz.sh/)
 
-## Installation
+## Install
 
-1. Clone the repository in `~`:
-    ```sh
-    git clone git@github.com:antoniopelusi/.zsh_functions.git ~/.zsh_functions
-    ```
+```sh
+git clone git@github.com:antoniopelusi/.zsh_functions.git ~/.zsh_functions
+cd ~/.zsh_functions
+make install
+source ~/.zshrc
+cd ~
+```
 
-2. Install and apply:
-    ```zsh
-    cd ~/.zsh_functions
-    make install
-    source ~/.zshrc
-    ```
+## Uninstall
+
+```sh
+make uninstall
+```
 
 ## Commands (`x`)
 
