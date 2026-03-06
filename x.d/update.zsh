@@ -18,7 +18,7 @@ case "$choice" in
     echo "Flatpak update complete."
     echo "Updating firmware..."
     sudo fwupdmgr refresh --force
-    sudo fwupdmgr update -y
+    sudo fwupdmgr -y update
     echo "System update complete."
     ;;
   * )
