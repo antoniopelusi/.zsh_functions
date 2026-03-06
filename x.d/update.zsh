@@ -10,14 +10,16 @@ case "$choice" in
     echo "Removing unused packages..."
     sudo dnf -y autoremove
     echo "Cleaning package cache..."
-    sudo dnf clean all
-    echo "System update complete."
-
+    sudo dnf -y clean all
     echo "Updating Flatpak applications..."
     flatpak -y update
     echo "Removing unused Flatpak runtimes..."
     flatpak -y uninstall --unused
     echo "Flatpak update complete."
+    echo "Updating firmware..."
+    sudo fwupdmgr refresh --force
+    sudo fwupdmgr update -y
+    echo "System update complete."
     ;;
   * )
     echo "Update canceled."
