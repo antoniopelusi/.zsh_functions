@@ -12,9 +12,9 @@ install:
 	echo 'source $$ZSH/oh-my-zsh.sh' >> ~/.zshrc
 	echo '' >> ~/.zshrc
 	echo 'fpath=(~/.zsh_functions $$fpath)' >> ~/.zshrc
-	echo 'autoload -Uz x' >> ~/.zshrc
 	echo 'autoload -Uz compinit' >> ~/.zshrc
-	echo 'compinit -C' >> ~/.zshrc
+	echo 'compinit' >> ~/.zshrc
+	echo 'autoload -Uz x' >> ~/.zshrc
 	echo "|> zsh_functions installed"
 	echo "|> Installing bin wrappers..."
 	sudo cp bin/zed /usr/local/bin/zed

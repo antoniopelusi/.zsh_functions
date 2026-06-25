@@ -1,27 +1,27 @@
-echo -n "Do you want to update the system? [Y/n] "
+# Update system packages, Flatpak apps and firmware
+printf "Do you want to update the system? [Y/n] "
 read choice
 case "$choice" in
   [Yy]* | "" )
-    echo "Updating and upgrading installed packages..."
+    printf "Updating and upgrading installed packages...\n"
     if ! sudo dnf -y update --refresh; then
-      echo "Failed to upgrade packages."
+      printf "Failed to upgrade packages.\n"
       return 1
     fi
-    echo "Removing unused packages..."
+    printf "Removing unused packages...\n"
     sudo dnf -y autoremove
-    echo "Cleaning package cache..."
+    printf "Cleaning package cache...\n"
     sudo dnf -y clean all
-    echo "Updating Flatpak applications..."
+    printf "Updating Flatpak applications...\n"
     flatpak -y update
-    echo "Removing unused Flatpak runtimes..."
+    printf "Removing unused Flatpak runtimes...\n"
     flatpak -y uninstall --unused
-    echo "Flatpak update complete."
-    echo "Updating firmware..."
+    printf "Updating firmware...\n"
     sudo fwupdmgr refresh --force
     sudo fwupdmgr -y update
-    echo "System update complete."
+    printf "System update complete.\n"
     ;;
   * )
-    echo "Update canceled."
+    printf "Update canceled.\n"
     ;;
 esac

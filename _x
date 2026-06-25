@@ -1,8 +1,13 @@
 #compdef x
-_x() {
-  local -a commands
-  for f in ~/.zsh_functions/x.d/*.zsh(N); do
-    commands+=("${f:t:r}")
-  done
-  _describe 'command' commands
-}
+
+local -a commands
+local cmd_dir="$HOME/.zsh_functions/x.d"
+local name desc
+
+for f in "$cmd_dir"/*.zsh(N); do
+  name="${f:t:r}"
+  desc=$(head -1 "$f" | sed 's/^# //')
+  commands+=("${name}:${desc:-(no description)}")
+done
+
+_describe 'command' commands
