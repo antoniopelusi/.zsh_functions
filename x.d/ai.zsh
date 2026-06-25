@@ -5,7 +5,7 @@ ARGS="$*"
 SCRIPT=$(mktemp /tmp/ai_XXXXXX.exp)
 cat > "$SCRIPT" << EOF
 log_user 0
-spawn env TERM=dumb ollama run hf.co/bartowski/Qwen2.5-Coder-7B-Instruct-GGUF:Q4_K_M
+spawn env TERM=dumb ollama run hf.co/bartowski/Qwen2.5-Coder-3B-Instruct-GGUF:Q4_K_M
 log_user 1
 expect ">>> "
 if { $HAS_PROMPT == 1 } {
