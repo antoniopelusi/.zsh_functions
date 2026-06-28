@@ -38,7 +38,6 @@ x <command> [args]
 | `x clone <repo_name>` | Clone a personal GitHub repo into `~/Projects/<repo_name>` |
 | `x update` | Update the system using `dnf` and `flatpak` |
 | `x prime-run <cmd>` | Run a command using the dedicated **NVIDIA GPU** (PRIME offload) |
-| `x ai [prompt]` | Start an AI chat session with Qwen2.5 Coder (inline if prompt provided) |
 
 ## Bin wrappers
 
